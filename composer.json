@@ -5,7 +5,6 @@
 	"time": "2013-03-07",
     "license": "MIT",
 	"homepage": "https://github.com/ravage84/SwissPaymentSlipFpdf",
-	"minimum-stability": "dev",
 	"keywords": [
 			"Payment slip",
 			"Inpayment slip",
@@ -14,6 +13,7 @@
 			"PDF",
 			"TCPDF"
 	],
+	"minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0",
         "itbz/fpdf": "1.7.1",
