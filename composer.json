@@ -11,7 +11,7 @@
 			"Einzahlungsschein",
 			"ESR",
 			"PDF",
-			"TCPDF"
+			"FPDF"
 	],
 	"minimum-stability": "dev",
     "require": {
