@@ -10,7 +10,9 @@
 			"Payment slip",
 			"Inpayment slip",
 			"Einzahlungsschein",
-			"ESR"
+			"ESR",
+			"PDF",
+			"TCPDF"
 	],
     "require": {
         "php": ">=5.3.0",
