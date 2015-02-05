@@ -19,6 +19,9 @@
         "itbz/fpdf": "1.7.1",
 		"swiss-payment-slip/swiss-payment-slip-pdf": "dev-master"
     },
+    "require-dev": {
+	    "phpunit/phpunit": "3.7.38"
+    },
     "authors": [
 		{
 			"name": "Marc Würth",
