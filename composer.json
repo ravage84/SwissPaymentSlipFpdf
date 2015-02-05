@@ -1,8 +1,6 @@
 {
     "name": "swiss-payment-slip/swiss-payment-slip-fpdf",
     "description": "A class to create Swiss payment slips with reference number (ESR) in pdf format with FPDF.",
-	"version": "0.5.0",
-	"time": "2013-03-07",
     "license": "MIT",
 	"homepage": "https://github.com/ravage84/SwissPaymentSlipFpdf",
 	"keywords": [
