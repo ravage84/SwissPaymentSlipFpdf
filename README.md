@@ -36,7 +36,7 @@ Then create a [composer.json](http://getcomposer.org/doc/04-schema.md) file in y
 ```JSON
 {
     "require": {
-        "swiss-payment-slip/swiss-payment-slip-fpdf": "dev-master"
+        "swiss-payment-slip/swiss-payment-slip-fpdf": "*"
     }
 }
 ```
