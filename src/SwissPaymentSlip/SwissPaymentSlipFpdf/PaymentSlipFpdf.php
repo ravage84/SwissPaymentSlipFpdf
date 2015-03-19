@@ -23,7 +23,7 @@ use fpdf\FPDF;
  * Layouting done by utilizing SwissPaymentSlip
  * Data organisation through SwissPaymentSlipData
  */
-class SwissPaymentSlipFpdf extends PaymentSlipPdf
+class PaymentSlipFpdf extends PaymentSlipPdf
 {
 	protected $rgbColors = array();
 

@@ -31,7 +31,7 @@ require __DIR__.'/../vendor/autoload.php';
 // Import necessary classes
 use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlip;
 use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlipData;
-use SwissPaymentSlip\SwissPaymentSlipFpdf\SwissPaymentSlipFpdf;
+use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
@@ -69,7 +69,7 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 	$paymentSlip = new OrangePaymentSlip($paymentSlipData, 0, 191); // for better performance, take outside of the loop
 
 	// Create an instance of the FPDF implementation
-	$paymentSlipFpdf = new SwissPaymentSlipFpdf($fPdf, $paymentSlip); // for better performance, take outside of the loop
+	$paymentSlipFpdf = new PaymentSlipFpdf($fPdf, $paymentSlip); // for better performance, take outside of the loop
 
 	// "Print" the slip with its elements according to their attributes
 	$paymentSlipFpdf->createPaymentSlip($paymentSlip);
