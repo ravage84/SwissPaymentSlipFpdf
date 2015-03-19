@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f09f7f85d145f32c8f97b96d8758286",
+    "hash": "7bb2ab1077652edeb63589345ba3394c",
     "packages": [
         {
             "name": "itbz/fpdf",
@@ -34,6 +34,132 @@
             "homepage": "http://www.fpdf.org/",
             "time": "2012-05-18 00:06:51"
         },
+        {
+            "name": "swiss-payment-slip/swiss-payment-slip",
+            "version": "0.11.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ravage84/SwissPaymentSlip.git",
+                "reference": "a30d5b62db1a8f7048e63302bf639f64a4e9790a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ravage84/SwissPaymentSlip/zipball/a30d5b62db1a8f7048e63302bf639f64a4e9790a",
+                "reference": "a30d5b62db1a8f7048e63302bf639f64a4e9790a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.38",
+                "squizlabs/php_codesniffer": "2.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SwissPaymentSlip\\SwissPaymentSlip\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Siska",
+                    "email": "pesche@gridonic.ch",
+                    "homepage": "http://www.gridonic.ch",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Manuel Reinhard",
+                    "email": "manu@sprain.ch",
+                    "homepage": "http://www.sprain.ch",
+                    "role": "Developer of the original class"
+                },
+                {
+                    "name": "Marc Würth",
+                    "email": "ravage@bluewin.ch",
+                    "role": "Lead developer"
+                }
+            ],
+            "description": "A library for creating Swiss payment slips",
+            "homepage": "https://github.com/ravage84/SwissPaymentSlip",
+            "keywords": [
+                "ESR",
+                "Einzahlungsschein",
+                "Inpayment slip",
+                "Payment slip",
+                "es"
+            ],
+            "time": "2015-02-18 19:51:56"
+        },
+        {
+            "name": "swiss-payment-slip/swiss-payment-slip-pdf",
+            "version": "0.13.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ravage84/SwissPaymentSlipPdf.git",
+                "reference": "4355743b2406875e9fed2117d8df445ba6848be4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ravage84/SwissPaymentSlipPdf/zipball/4355743b2406875e9fed2117d8df445ba6848be4",
+                "reference": "4355743b2406875e9fed2117d8df445ba6848be4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "swiss-payment-slip/swiss-payment-slip": "0.11.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.38",
+                "squizlabs/php_codesniffer": "2.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SwissPaymentSlip\\SwissPaymentSlipPdf\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Siska",
+                    "email": "pesche@gridonic.ch",
+                    "homepage": "http://www.gridonic.ch",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Manuel Reinhard",
+                    "email": "manu@sprain.ch",
+                    "homepage": "http://www.sprain.ch",
+                    "role": "Developer of the original class"
+                },
+                {
+                    "name": "Marc Würth",
+                    "email": "ravage@bluewin.ch",
+                    "role": "Lead developer"
+                }
+            ],
+            "description": "An abstract base class for creating Swiss payment slips with reference number (ESR) or without (ES) using a pdf engine",
+            "homepage": "https://github.com/ravage84/SwissPaymentSlipPdf",
+            "keywords": [
+                "ESR",
+                "Einzahlungsschein",
+                "Inpayment slip",
+                "Payment slip",
+                "es",
+                "pdf"
+            ],
+            "time": "2015-02-18 20:04:44"
+        }
+    ],
+    "packages-dev": [
         {
             "name": "phpunit/php-code-coverage",
             "version": "1.2.x-dev",
@@ -409,211 +535,25 @@
             "time": "2014-02-16 12:43:56"
         },
         {
-            "name": "squizlabs/php_codesniffer",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "d2a1d4c58fd2bb09ba376d0d19e67c0ab649e401"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d2a1d4c58fd2bb09ba376d0d19e67c0ab649e401",
-                "reference": "d2a1d4c58fd2bb09ba376d0d19e67c0ab649e401",
-                "shasum": ""
-            },
-            "require": {
-                "ext-tokenizer": "*",
-                "php": ">=5.1.2"
-            },
-            "bin": [
-                "scripts/phpcs",
-                "scripts/phpcbf"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-phpcs-fixer": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "CodeSniffer.php",
-                    "CodeSniffer/CLI.php",
-                    "CodeSniffer/Exception.php",
-                    "CodeSniffer/File.php",
-                    "CodeSniffer/Fixer.php",
-                    "CodeSniffer/Report.php",
-                    "CodeSniffer/Reporting.php",
-                    "CodeSniffer/Sniff.php",
-                    "CodeSniffer/Tokens.php",
-                    "CodeSniffer/Reports/",
-                    "CodeSniffer/Tokenizers/",
-                    "CodeSniffer/DocGenerators/",
-                    "CodeSniffer/Standards/AbstractPatternSniff.php",
-                    "CodeSniffer/Standards/AbstractScopeSniff.php",
-                    "CodeSniffer/Standards/AbstractVariableSniff.php",
-                    "CodeSniffer/Standards/IncorrectPatternException.php",
-                    "CodeSniffer/Standards/Generic/Sniffs/",
-                    "CodeSniffer/Standards/MySource/Sniffs/",
-                    "CodeSniffer/Standards/PEAR/Sniffs/",
-                    "CodeSniffer/Standards/PSR1/Sniffs/",
-                    "CodeSniffer/Standards/PSR2/Sniffs/",
-                    "CodeSniffer/Standards/Squiz/Sniffs/",
-                    "CodeSniffer/Standards/Zend/Sniffs/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Greg Sherwood",
-                    "role": "lead"
-                }
-            ],
-            "description": "PHP_CodeSniffer tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-            "homepage": "http://www.squizlabs.com/php-codesniffer",
-            "keywords": [
-                "phpcs",
-                "standards"
-            ],
-            "time": "2014-12-18 02:37:51"
-        },
-        {
-            "name": "swiss-payment-slip/swiss-payment-slip",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ravage84/SwissPaymentSlip.git",
-                "reference": "96102788e8c68e5929634642fb5b6bbc40f4f98a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ravage84/SwissPaymentSlip/zipball/96102788e8c68e5929634642fb5b6bbc40f4f98a",
-                "reference": "96102788e8c68e5929634642fb5b6bbc40f4f98a",
-                "shasum": ""
-            },
-            "require": {
-                "phpunit/phpunit": "3.7.38",
-                "squizlabs/php_codesniffer": "2.1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "SwissPaymentSlip\\SwissPaymentSlip": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Peter Siska",
-                    "email": "pesche@gridonic.ch",
-                    "homepage": "http://www.gridonic.ch",
-                    "role": "Contributor"
-                },
-                {
-                    "name": "Manuel Reinhard",
-                    "email": "manu@sprain.ch",
-                    "homepage": "http://www.sprain.ch",
-                    "role": "Developer of the original class"
-                },
-                {
-                    "name": "Marc Würth",
-                    "email": "ravage@bluewin.ch",
-                    "role": "Lead developer"
-                }
-            ],
-            "description": "A class to create Swiss payment slips with reference number (ESR)",
-            "homepage": "https://github.com/ravage84/SwissPaymentSlip",
-            "keywords": [
-                "ESR",
-                "Einzahlungsschein",
-                "Inpayment slip",
-                "Payment slip",
-                "es"
-            ],
-            "time": "2015-02-05 12:59:13"
-        },
-        {
-            "name": "swiss-payment-slip/swiss-payment-slip-pdf",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ravage84/SwissPaymentSlipPdf.git",
-                "reference": "15aa52c22066fb29fcd8a80d842ef1506b3471f5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ravage84/SwissPaymentSlipPdf/zipball/15aa52c22066fb29fcd8a80d842ef1506b3471f5",
-                "reference": "15aa52c22066fb29fcd8a80d842ef1506b3471f5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "swiss-payment-slip/swiss-payment-slip": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "SwissPaymentSlip\\SwissPaymentSlipPdf": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Peter Siska",
-                    "email": "pesche@gridonic.ch",
-                    "homepage": "http://www.gridonic.ch",
-                    "role": "Contributor"
-                },
-                {
-                    "name": "Manuel Reinhard",
-                    "email": "manu@sprain.ch",
-                    "homepage": "http://www.sprain.ch",
-                    "role": "Developer of the original class"
-                },
-                {
-                    "name": "Marc Würth",
-                    "email": "ravage@bluewin.ch",
-                    "role": "Lead developer"
-                }
-            ],
-            "description": "An abstract base class for create Swiss payment slips with reference number (ESR) with a pdf engine",
-            "homepage": "https://github.com/ravage84/SwissPaymentSlipPdf",
-            "keywords": [
-                "ESR",
-                "Einzahlungsschein",
-                "Inpayment slip",
-                "Payment slip",
-                "pdf"
-            ],
-            "time": "2015-02-05 13:03:32"
-        },
-        {
             "name": "symfony/yaml",
             "version": "2.7.x-dev",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "02ba3dc638c5d3f0ab3b47ddb74f98c11dcc0c60"
+                "reference": "6411b65c8bb376e35eae6a2ec023b3e8da3ea44c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/02ba3dc638c5d3f0ab3b47ddb74f98c11dcc0c60",
-                "reference": "02ba3dc638c5d3f0ab3b47ddb74f98c11dcc0c60",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/6411b65c8bb376e35eae6a2ec023b3e8da3ea44c",
+                "reference": "6411b65c8bb376e35eae6a2ec023b3e8da3ea44c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7|~3.0.0"
             },
             "type": "library",
             "extra": {
@@ -642,15 +582,12 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2015-01-25 04:39:35"
+            "time": "2015-03-13 17:50:01"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "swiss-payment-slip/swiss-payment-slip-pdf": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
