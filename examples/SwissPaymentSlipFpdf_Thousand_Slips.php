@@ -29,8 +29,8 @@ $time_start = microtime(true);
 require __DIR__.'/../vendor/autoload.php';
 
 // Import necessary classes
-use SwissPaymentSlip\SwissPaymentSlip\SwissPaymentSlipData;
-use SwissPaymentSlip\SwissPaymentSlip\SwissPaymentSlip;
+use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlip;
+use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlipData;
 use SwissPaymentSlip\SwissPaymentSlipFpdf\SwissPaymentSlipFpdf;
 use fpdf\FPDF;
 
@@ -54,7 +54,7 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 	$fPdf->Cell(50, 4, "Just some dummy text.");
 
 	// Create a payment slip data container (value object)
-	$paymentSlipData = new SwissPaymentSlipData(); // for better performance, take outside of the loop
+	$paymentSlipData = new OrangePaymentSlipData(); // for better performance, take outside of the loop
 
 	// Fill the data container with your data
 	$paymentSlipData->setBankData('Seldwyla Bank', '8001 Zürich');
@@ -66,13 +66,13 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 	$paymentSlipData->setBankingCustomerId('215703');
 
 	// Create a payment slip object, pass in the prepared data container
-	$paymentSlip = new SwissPaymentSlip($paymentSlipData, 0, 191); // for better performance, take outside of the loop
+	$paymentSlip = new OrangePaymentSlip($paymentSlipData, 0, 191); // for better performance, take outside of the loop
 
 	// Create an instance of the FPDF implementation
 	$paymentSlipFpdf = new SwissPaymentSlipFpdf($fPdf, $paymentSlip); // for better performance, take outside of the loop
 
 	// "Print" the slip with its elements according to their attributes
-	$paymentSlipFpdf->createPaymentSlip();
+	$paymentSlipFpdf->createPaymentSlip($paymentSlip);
 }
 
 // Output PDF named example_fpdf_thousand_slips.pdf to examples folder
