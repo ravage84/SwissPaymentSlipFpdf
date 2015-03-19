@@ -29,8 +29,8 @@ $time_start = microtime(true);
 require __DIR__.'/../vendor/autoload.php';
 
 // Import necessary classes
-use SwissPaymentSlip\SwissPaymentSlip\SwissPaymentSlipData;
-use SwissPaymentSlip\SwissPaymentSlip\SwissPaymentSlip;
+use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlipData;
+use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlip;
 use SwissPaymentSlip\SwissPaymentSlipFpdf\SwissPaymentSlipFpdf;
 use fpdf\FPDF;
 
@@ -52,7 +52,7 @@ $fPdf->SetFont('Helvetica','',9);
 $fPdf->Cell(50, 4, "Just some dummy text.");
 
 // Create a payment slip data container (value object)
-$paymentSlipData = new SwissPaymentSlipData();
+$paymentSlipData = new OrangePaymentSlipData();
 
 // Fill the data container with your data
 $paymentSlipData->setBankData('Seldwyla Bank', '8001 Zürich');
@@ -64,13 +64,13 @@ $paymentSlipData->setReferenceNumber('7520033455900012');
 $paymentSlipData->setBankingCustomerId('215703');
 
 // Create a payment slip object, pass in the prepared data container
-$paymentSlip = new SwissPaymentSlip($paymentSlipData, 0, 191);
+$paymentSlip = new OrangePaymentSlip($paymentSlipData, 0, 191);
 
 // Create an instance of the FPDF implementation
 $paymentSlipFpdf = new SwissPaymentSlipFpdf($fPdf, $paymentSlip);
 
 // "Print" the slip with its elements according to their attributes
-$paymentSlipFpdf->createPaymentSlip();
+$paymentSlipFpdf->createPaymentSlip($paymentSlip);
 
 // Output PDF named example_fpdf_orange_slip.pdf to examples folder
 $fPdf->Output(__DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_orange_slip.pdf', 'F');
