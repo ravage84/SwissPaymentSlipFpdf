@@ -15,7 +15,7 @@
 
 namespace SwissPaymentSlip\SwissPaymentSlipFpdf;
 
-use SwissPaymentSlip\SwissPaymentSlipPdf\SwissPaymentSlipPdf;
+use SwissPaymentSlip\SwissPaymentSlipPdf\PaymentSlipPdf;
 use fpdf\FPDF;
 
 /**
@@ -23,7 +23,7 @@ use fpdf\FPDF;
  * Layouting done by utilizing SwissPaymentSlip
  * Data organisation through SwissPaymentSlipData
  */
-class SwissPaymentSlipFpdf extends SwissPaymentSlipPdf
+class SwissPaymentSlipFpdf extends PaymentSlipPdf
 {
 	protected $rgbColors = array();
 
