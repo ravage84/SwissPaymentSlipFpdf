@@ -16,6 +16,8 @@ use SwissPaymentSlip\SwissPaymentSlipPdf\PaymentSlipPdf;
 use fpdf\FPDF;
 
 /**
+ * Create Swiss payment slips (ESR/ES) as PDFs with TCPDF
+ *
  * Responsible for generating standard Swiss payment Slips using FPDF as engine.
  * Layouting done by utilizing SwissPaymentSlip
  * Data organisation through SwissPaymentSlipData
@@ -24,32 +26,37 @@ class PaymentSlipFpdf extends PaymentSlipPdf
 {
 	protected $rgbColors = array();
 
-	/**
-	 * The PDF engine object to generate the PDF output
-	 *
-	 * @var null|FPDF The PDF engine object
-	 */
+    /**
+     * The PDF engine object to generate the PDF output with
+     *
+     * @var null|FPDF The PDF engine object
+     */
 	protected $pdfEngine = null;
 
-	/**
-	 * @var string;
-	 */
+    /**
+     * The last set font family, prevents the PDF engine to re-set the same values over and over
+     *
+     * @var string;
+     */
 	protected  $lastFontFamily = '';
 
-	/**
-	 * @var int | double;
-	 */
+    /**
+     * The last set font size, prevents the PDF engine to re-set the same values over and over
+     *
+     * @var int|double;
+     */
 	protected  $lastFontSize = '';
 
-	/**
-	 * @var string;
-	 */
+    /**
+     * The last set font color, prevents the PDF engine to re-set the same values over and over
+     *
+     * @var string;
+     */
 	protected  $lastFontColor = '';
 
-	/**
-	 * @param $background
-	 * @return mixed|void
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	protected function displayImage($background) {
 		// TODO check if slipBackground is a color or a path to a file
 
@@ -61,12 +68,9 @@ class PaymentSlipFpdf extends PaymentSlipPdf
 			strtoupper(substr($background, -3, 3)));
 	}
 
-	/**
-	 * @param $fontFamily
-	 * @param $fontSize
-	 * @param $fontColor
-	 * @return mixed|void
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	protected function setFont($fontFamily, $fontSize, $fontColor) {
 		if ($fontColor) {
 			if ($this->lastFontColor != $fontColor) {
@@ -84,10 +88,9 @@ class PaymentSlipFpdf extends PaymentSlipPdf
 		}
 	}
 
-	/**
-	 * @param $background
-	 * @return mixed|void
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	protected function setBackground($background) {
 		// TODO check if it's a path to a file
 		// TODO else it should be a color
@@ -95,31 +98,23 @@ class PaymentSlipFpdf extends PaymentSlipPdf
 		$this->pdfEngine->SetFillColor($rgbArray['red'], $rgbArray['green'], $rgbArray['blue']);
 	}
 
-	/**
-	 * @param $posX
-	 * @param $posY
-	 * @return mixed|void
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	protected function setPosition($posX, $posY) {
 		$this->pdfEngine->SetXY($posX, $posY);
 	}
 
-	/**
-	 * @param $width
-	 * @param $height
-	 * @param $line
-	 * @param $textAlign
-	 * @param $fill
-	 * @return mixed|void
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	protected function createCell($width, $height, $line, $textAlign, $fill) {
 		$this->pdfEngine->Cell($width, $height, utf8_decode($line), 0, 0, $textAlign, $fill);
 	}
 
-	/**
-	 * @param $color
-	 * @return mixed
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	protected function convertColor2Rgb($color) {
 		if (isset($this->rgbColors[$color])) {
 			return $this->rgbColors[$color];
@@ -128,17 +123,19 @@ class PaymentSlipFpdf extends PaymentSlipPdf
 		return $this->rgbColors[$color];
 	}
 
-	/**
-	 * Convert hexadecimal values into an array of RGB
-	 *
-	 * @param $hexStr
-	 * @param bool $returnAsString
-	 * @param string $separator
-	 * @return array|bool|string
-	 *
-	 * @copyright 2010 hafees at msn dot com
-	 * @link http://www.php.net/manual/en/function.hexdec.php#99478
-	 */
+    /**
+     * Convert hexadecimal color code into an associative array or string of RGB values
+     *
+     * @param string $hexStr The hexadecimal color code (3 or 6 characters long)
+     * @param bool $returnAsString Whether to return as a string or array.
+     * @param string $separator The separator for the RGB value string, defaults to ",".
+     * @return array|string|false The RGB values as an associative array or a string.
+     * False if an invalid color code was given.
+     *
+     * @copyright 2010 hafees at msn dot com
+     * @link http://www.php.net/manual/en/function.hexdec.php#99478
+     * @todo Throw an exception if an invalid hex color code was given
+     */
 	private function hex2RGB($hexStr, $returnAsString = false, $separator = ',') {
 		$hexStr = preg_replace("/[^0-9A-Fa-f]/", '', $hexStr); // Gets a proper hex string
 		$rgbArray = array();
