@@ -1,16 +1,13 @@
 <?php
 /**
- * SwissPaymentSlipFpdf Example 03: Create one thousand orange payment slips
+ * Swiss Payment Slip TCPDF
  *
- * PHP version >= 5.3.0
- *
- * @licence MIT
- * @copyright 2012-2013 Some nice Swiss guys
+ * @license http://www.opensource.org/licenses/mit-license.php MIT License
+ * @copyright 2012-2015 Some nice Swiss guys
+ * @author Marc Würth <ravage@bluewin.ch>
  * @author Manuel Reinhard <manu@sprain.ch>
  * @author Peter Siska <pesche@gridonic.ch>
- * @author Marc Würth ravage@bluewin.ch
- * @link https://github.com/sprain/class.Einzahlungsschein.php
- * @version: 0.5.0
+ * @link https://github.com/ravage84/SwissPaymentSlipFpdf
  */
 ?>
 <!DOCTYPE html>
@@ -29,9 +26,9 @@ $time_start = microtime(true);
 require __DIR__.'/../vendor/autoload.php';
 
 // Import necessary classes
-use SwissPaymentSlip\SwissPaymentSlip\SwissPaymentSlipData;
-use SwissPaymentSlip\SwissPaymentSlip\SwissPaymentSlip;
-use SwissPaymentSlip\SwissPaymentSlipFpdf\SwissPaymentSlipFpdf;
+use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlip;
+use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlipData;
+use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
@@ -54,7 +51,7 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 	$fPdf->Cell(50, 4, "Just some dummy text.");
 
 	// Create a payment slip data container (value object)
-	$paymentSlipData = new SwissPaymentSlipData(); // for better performance, take outside of the loop
+	$paymentSlipData = new OrangePaymentSlipData(); // for better performance, take outside of the loop
 
 	// Fill the data container with your data
 	$paymentSlipData->setBankData('Seldwyla Bank', '8001 Zürich');
@@ -66,13 +63,13 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 	$paymentSlipData->setBankingCustomerId('215703');
 
 	// Create a payment slip object, pass in the prepared data container
-	$paymentSlip = new SwissPaymentSlip($paymentSlipData, 0, 191); // for better performance, take outside of the loop
+	$paymentSlip = new OrangePaymentSlip($paymentSlipData, 0, 191); // for better performance, take outside of the loop
 
 	// Create an instance of the FPDF implementation
-	$paymentSlipFpdf = new SwissPaymentSlipFpdf($fPdf, $paymentSlip); // for better performance, take outside of the loop
+	$paymentSlipFpdf = new PaymentSlipFpdf($fPdf, $paymentSlip); // for better performance, take outside of the loop
 
 	// "Print" the slip with its elements according to their attributes
-	$paymentSlipFpdf->createPaymentSlip();
+	$paymentSlipFpdf->createPaymentSlip($paymentSlip);
 }
 
 // Output PDF named example_fpdf_thousand_slips.pdf to examples folder
