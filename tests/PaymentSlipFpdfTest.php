@@ -1,6 +1,6 @@
 <?php
 /**
- * Swiss Payment Slip TCPDF
+ * Swiss Payment Slip FPDF
  *
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
  * @copyright 2012-2015 Some nice Swiss guys
@@ -13,9 +13,9 @@
 namespace SwissPaymentSlip\SwissPaymentSlipFpdf\Tests;
 
 /**
- * Tests for the PaymentSlipTcpdf class
+ * Tests for the PaymentSlipFpdf class
  *
- * @coversDefaultClass SwissPaymentSlip\SwissPaymentSlipPdf\PaymentSlipTcpdf
+ * @coversDefaultClass SwissPaymentSlip\SwissPaymentSlipPdf\PaymentSlipFpdf
  */
 class PaymentSlipFpdfTest extends \PHPUnit_Framework_TestCase
 {

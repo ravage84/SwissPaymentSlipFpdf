@@ -1,6 +1,6 @@
 <?php
 /**
- * Swiss Payment Slip TCPDF
+ * Swiss Payment Slip FPDF
  *
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
  * @copyright 2012-2015 Some nice Swiss guys
