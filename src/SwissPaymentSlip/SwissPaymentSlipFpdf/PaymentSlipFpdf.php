@@ -40,7 +40,7 @@ class PaymentSlipFpdf extends PaymentSlipPdf
 	protected  $lastFontFamily = '';
 
 	/**
-	 * @var string;
+	 * @var int | double;
 	 */
 	protected  $lastFontSize = '';
 
