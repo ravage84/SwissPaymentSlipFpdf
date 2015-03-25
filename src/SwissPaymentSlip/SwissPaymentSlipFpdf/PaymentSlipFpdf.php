@@ -16,7 +16,7 @@ use SwissPaymentSlip\SwissPaymentSlipPdf\PaymentSlipPdf;
 use fpdf\FPDF;
 
 /**
- * Create Swiss payment slips (ESR/ES) as PDFs with TCPDF
+ * Create Swiss payment slips (ESR/ES) as PDFs with FPDF
  *
  * Responsible for generating standard Swiss payment Slips using FPDF as engine.
  * Layouting done by utilizing SwissPaymentSlip
