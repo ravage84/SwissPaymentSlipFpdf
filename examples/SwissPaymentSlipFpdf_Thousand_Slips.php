@@ -1,6 +1,6 @@
 <?php
 /**
- * Swiss Payment Slip TCPDF
+ * Swiss Payment Slip FPDF
  *
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
  * @copyright 2012-2015 Some nice Swiss guys
@@ -23,13 +23,12 @@
 $time_start = microtime(true);
 
 // Make sure the classes get auto-loaded
-require __DIR__.'/../vendor/autoload.php';
+$loader = require __DIR__.'/../vendor/autoload.php';
 
 // Import necessary classes
 use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlip;
 use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlipData;
 use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
-use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
 define('FPDF_FONTPATH', __DIR__.'/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
@@ -62,7 +61,7 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 	$paymentSlipData->setReferenceNumber('7520033455900012');
 	$paymentSlipData->setBankingCustomerId('215703');
 
-	// Create a payment slip object, pass in the prepared data container
+    // Create a payment slip object, pass in the prepared data container
 	$paymentSlip = new OrangePaymentSlip($paymentSlipData, 0, 191); // for better performance, take outside of the loop
 
 	// Create an instance of the FPDF implementation
@@ -72,10 +71,12 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 	$paymentSlipFpdf->createPaymentSlip($paymentSlip);
 }
 
-// Output PDF named example_fpdf_thousand_slips.pdf to examples folder
-$fPdf->Output(__DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_thousand_slips.pdf', 'F');
+// Output PDF named example_tcpdf_thousand_slips.pdf to examples folder
+$pdfName = 'example_fppdf_thousand_slips.pdf';
+$pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
+$tcPdf->Output($pdfPath, 'F');
 
-echo "Payment slip created in " . __DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_thousand_slips.pdf <br>';
+echo sprintf('Payment slips created in <a href="%s">%s</a><br>', $pdfName, $pdfPath);
 
 echo "<br>";
 
