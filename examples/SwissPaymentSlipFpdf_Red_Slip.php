@@ -60,7 +60,7 @@ $paymentSlipData->setPayerData('M. Beispieler', 'Bahnhofstrasse 356', '', '7000 
 $paymentSlipData->setAmount(8479.25);
 $paymentSlipData->setPaymentReasonData('Rechnung', 'Nr.7496');
 
-// Create an payment slip object, pass in the prepared data container
+// Create a payment slip object, pass in the prepared data container
 // for better performance, take it outside of the loop
 $paymentSlip = new RedPaymentSlip($paymentSlipData, 0, 191);
 
