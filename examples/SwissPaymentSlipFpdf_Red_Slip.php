@@ -23,7 +23,7 @@
 $time_start = microtime(true);
 
 // Make sure the classes get auto-loaded
-require __DIR__.'/../vendor/autoload.php';
+$loader = require __DIR__. '/../vendor/autoload.php';
 
 // Import necessary classes
 use SwissPaymentSlip\SwissPaymentSlip\RedPaymentSlip;
@@ -52,15 +52,16 @@ $fPdf->Cell(50, 4, "Just some dummy text.");
 $paymentSlipData = new RedPaymentSlipData();
 
 // Fill the data container with your data
-$paymentSlipData->setBankData('Seldwyla Bank', '8021 Zuerich');
+$paymentSlipData->setBankData('Seldwyla Bank', '8021 Zürich');
 $paymentSlipData->setAccountNumber('80-939-3');
-$paymentSlipData->setRecipientData('Muster AG', 'Bahnhofstrasse 5', '8001 Zuerich');
+$paymentSlipData->setRecipientData('Muster AG', 'Bahnhofstrasse 5', '8001 Zürich');
 $paymentSlipData->setIban('CH3808888123456789012');
 $paymentSlipData->setPayerData('M. Beispieler', 'Bahnhofstrasse 356', '', '7000 Chur');
 $paymentSlipData->setAmount(8479.25);
 $paymentSlipData->setPaymentReasonData('Rechnung', 'Nr.7496');
 
-// Create a payment slip object, pass in the prepared data container
+// Create an payment slip object, pass in the prepared data container
+// for better performance, take it outside of the loop
 $paymentSlip = new RedPaymentSlip($paymentSlipData, 0, 191);
 
 // Create an instance of the FPDF implementation
@@ -69,10 +70,12 @@ $paymentSlipFpdf = new PaymentSlipFpdf($fPdf, $paymentSlip);
 // "Print" the slip with its elements according to their attributes
 $paymentSlipFpdf->createPaymentSlip($paymentSlip);
 
-// Output PDF named example_fpdf_red_slip.pdf to examples folder
-$fPdf->Output(__DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_red_slip.pdf', 'F');
+// Output PDF named example_tcpdf_red_slip.pdf to examples folder
+$pdfName = 'example_fpdf_red_slip.pdf';
+$pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
+$fPdf->Output($pdfPath, 'F');
 
-echo "Payment slip created in " . __DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_red_slip.pdf <br>';
+echo sprintf('Payment slip created in <a href="%s">%s</a><br>', $pdfName, $pdfPath);
 
 echo "<br>";
 
