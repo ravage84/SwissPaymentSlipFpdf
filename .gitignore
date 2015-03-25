@@ -20,3 +20,6 @@ Thumbs.db
 phpunit.xml
 vendor
 report
+examples/example_fpdf_orange_slip.pdf
+examples/example_fpdf_red_slip.pdf
+examples/example_fpdf_thousand_slips.pdf
