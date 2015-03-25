@@ -1,6 +1,6 @@
 <?php
 /**
- * Swiss Payment Slip TCPDF
+ * Swiss Payment Slip FPDF
  *
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
  * @copyright 2012-2015 Some nice Swiss guys
@@ -16,7 +16,7 @@ use SwissPaymentSlip\SwissPaymentSlipPdf\PaymentSlipPdf;
 use fpdf\FPDF;
 
 /**
- * Create Swiss payment slips (ESR/ES) as PDFs with TCPDF
+ * Create Swiss payment slips (ESR/ES) as PDFs with FPDF
  *
  * Responsible for generating standard Swiss payment Slips using FPDF as engine.
  * Layouting done by utilizing SwissPaymentSlip
