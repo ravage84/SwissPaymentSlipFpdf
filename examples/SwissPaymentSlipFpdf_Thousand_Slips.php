@@ -29,6 +29,7 @@ $loader = require __DIR__.'/../vendor/autoload.php';
 use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlip;
 use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlipData;
 use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
+use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
 define('FPDF_FONTPATH', __DIR__.'/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
@@ -72,9 +73,9 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 }
 
 // Output PDF named example_tcpdf_thousand_slips.pdf to examples folder
-$pdfName = 'example_fppdf_thousand_slips.pdf';
+$pdfName = 'example_fpdf_thousand_slips.pdf';
 $pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
-$tcPdf->Output($pdfPath, 'F');
+$fPdf->Output($pdfPath, 'F');
 
 echo sprintf('Payment slips created in <a href="%s">%s</a><br>', $pdfName, $pdfPath);
 
