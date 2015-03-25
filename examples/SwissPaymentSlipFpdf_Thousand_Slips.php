@@ -72,7 +72,7 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
 	$paymentSlipFpdf->createPaymentSlip($paymentSlip);
 }
 
-// Output PDF named example_tcpdf_thousand_slips.pdf to examples folder
+// Output PDF named example_fpdf_thousand_slips.pdf to examples folder
 $pdfName = 'example_fpdf_thousand_slips.pdf';
 $pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
 $fPdf->Output($pdfPath, 'F');

@@ -70,7 +70,7 @@ $paymentSlipFpdf = new PaymentSlipFpdf($fPdf, $paymentSlip);
 // "Print" the slip with its elements according to their attributes
 $paymentSlipFpdf->createPaymentSlip($paymentSlip);
 
-// Output PDF named example_tcpdf_red_slip.pdf to examples folder
+// Output PDF named example_fpdf_red_slip.pdf to examples folder
 $pdfName = 'example_fpdf_red_slip.pdf';
 $pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
 $fPdf->Output($pdfPath, 'F');
