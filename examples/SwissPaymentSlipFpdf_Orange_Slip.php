@@ -23,7 +23,7 @@
 $time_start = microtime(true);
 
 // Make sure the classes get auto-loaded
-$loader = require __DIR__. '/../vendor/autoload.php';
+$loader = require __DIR__.'/../vendor/autoload.php';
 
 // Import necessary classes
 use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlipData;
@@ -72,7 +72,7 @@ $paymentSlipFpdf->createPaymentSlip($paymentSlip);
 // Output PDF named example_tcpdf_orange_slip.pdf to examples folder
 $pdfName = 'example_tcpdf_orange_slip.pdf';
 $pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
-$tcPdf->Output($pdfPath, 'F');
+$fPdf->Output($pdfPath, 'F');
 
 echo sprintf('Payment slip created in <a href="%s">%s</a><br>', $pdfName, $pdfPath);
 
