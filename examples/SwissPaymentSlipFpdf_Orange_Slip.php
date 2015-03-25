@@ -1,6 +1,6 @@
 <?php
 /**
- * Swiss Payment Slip TCPDF
+ * Swiss Payment Slip FPDF
  *
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
  * @copyright 2012-2015 Some nice Swiss guys
@@ -70,7 +70,7 @@ $paymentSlipFpdf = new PaymentSlipFpdf($fPdf, $paymentSlip);
 $paymentSlipFpdf->createPaymentSlip($paymentSlip);
 
 // Output PDF named example_tcpdf_orange_slip.pdf to examples folder
-$pdfName = 'example_tcpdf_orange_slip.pdf';
+$pdfName = 'example_fpdf_orange_slip.pdf';
 $pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
 $fPdf->Output($pdfPath, 'F');
 
