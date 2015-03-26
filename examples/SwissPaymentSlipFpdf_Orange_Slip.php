@@ -52,9 +52,9 @@ $fPdf->Cell(50, 4, "Just some dummy text.");
 $paymentSlipData = new OrangePaymentSlipData();
 
 // Fill the data container with your data
-$paymentSlipData->setBankData('Seldwyla Bank', '8001 Zürich');
+$paymentSlipData->setBankData('Seldwyla Bank', '8001 Zuerich');
 $paymentSlipData->setAccountNumber('01-145-6');
-$paymentSlipData->setRecipientData('H. Muster AG', 'Versandhaus', 'Industriestrasse 88', '8000 Zürich');
+$paymentSlipData->setRecipientData('H. Muster AG', 'Versandhaus', 'Industriestrasse 88', '8000 Zuerich');
 $paymentSlipData->setPayerData('Rutschmann Pia', 'Marktgasse 28', '9400 Rorschach');
 $paymentSlipData->setAmount(2830.50);
 $paymentSlipData->setReferenceNumber('7520033455900012');

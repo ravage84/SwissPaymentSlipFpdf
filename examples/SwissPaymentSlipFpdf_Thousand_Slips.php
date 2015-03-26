@@ -54,9 +54,9 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
     $paymentSlipData = new OrangePaymentSlipData(); // for better performance, take outside of the loop
 
     // Fill the data container with your data
-    $paymentSlipData->setBankData('Seldwyla Bank', '8001 Zürich');
+    $paymentSlipData->setBankData('Seldwyla Bank', '8001 Zuerich');
     $paymentSlipData->setAccountNumber('01-145-6');
-    $paymentSlipData->setRecipientData('H. Muster AG', 'Versandhaus', 'Industriestrasse 88', '8000 Zürich');
+    $paymentSlipData->setRecipientData('H. Muster AG', 'Versandhaus', 'Industriestrasse 88', '8000 Zuerich');
     $paymentSlipData->setPayerData('Rutschmann Pia', 'Marktgasse 28', '9400 Rorschach', 'Slip # ' . $slipNr);
     $paymentSlipData->setAmount(2830.50);
     $paymentSlipData->setReferenceNumber('7520033455900012');

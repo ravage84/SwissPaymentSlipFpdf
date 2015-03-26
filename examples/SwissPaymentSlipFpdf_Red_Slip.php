@@ -52,9 +52,9 @@ $fPdf->Cell(50, 4, "Just some dummy text.");
 $paymentSlipData = new RedPaymentSlipData();
 
 // Fill the data container with your data
-$paymentSlipData->setBankData('Seldwyla Bank', '8021 Zürich');
+$paymentSlipData->setBankData('Seldwyla Bank', '8021 Zuerich');
 $paymentSlipData->setAccountNumber('80-939-3');
-$paymentSlipData->setRecipientData('Muster AG', 'Bahnhofstrasse 5', '8001 Zürich');
+$paymentSlipData->setRecipientData('Muster AG', 'Bahnhofstrasse 5', '8001 Zuerich');
 $paymentSlipData->setIban('CH3808888123456789012');
 $paymentSlipData->setPayerData('M. Beispieler', 'Bahnhofstrasse 356', '', '7000 Chur');
 $paymentSlipData->setAmount(8479.25);
