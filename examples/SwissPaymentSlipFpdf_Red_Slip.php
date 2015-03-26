@@ -13,8 +13,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>SwissPaymentSlipFpdf Example 02: Create a red payment slip</title>
+    <meta charset="utf-8">
+    <title>SwissPaymentSlipFpdf Example 02: Create a red payment slip</title>
 </head>
 <body>
 <h1>SwissPaymentSlipFpdf Example 02: Create a red payment slip</h1>
@@ -23,7 +23,7 @@
 $time_start = microtime(true);
 
 // Make sure the classes get auto-loaded
-$loader = require __DIR__. '/../vendor/autoload.php';
+$loader = require __DIR__ . '/../vendor/autoload.php';
 
 // Import necessary classes
 use SwissPaymentSlip\SwissPaymentSlip\RedPaymentSlip;
@@ -32,10 +32,10 @@ use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
-define('FPDF_FONTPATH', __DIR__.'/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
+define('FPDF_FONTPATH', __DIR__ . '/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
 
 // Create an instance of FPDF, setup default settings
-$fPdf = new FPDF('P','mm','A4');
+$fPdf = new FPDF('P', 'mm', 'A4');
 
 // Add OCRB font to FPDF
 $fPdf->AddFont('OCRB10');
@@ -45,7 +45,7 @@ $fPdf->AddPage();
 $fPdf->SetAutoPageBreak(false);
 
 // Insert a dummy invoice text, not part of the payment slip itself
-$fPdf->SetFont('Helvetica','',9);
+$fPdf->SetFont('Helvetica', '', 9);
 $fPdf->Cell(50, 4, "Just some dummy text.");
 
 // Create a payment slip data container (value object)
