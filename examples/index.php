@@ -22,14 +22,19 @@
 <p>Learn how to use the SwissPaymentSlipFpdf class with the following examples:</p>
 <ul>
     <li>
-        <a href="SwissPaymentSlipFpdf_Orange_Slip.php">01 - Create an orange payment slip with SwissPaymentSlipFpdf</a>
+        <a href="SwissPaymentSlipFpdf_Orange_Slip.php">
+            01 - Create an orange payment slip with SwissPaymentSlipFpdf
+        </a>
     </li>
     <li>
-        <a href="SwissPaymentSlipFpdf_Red_Slip.php">02 - Create a red payment slip with SwissPaymentSlipFpdf</a>
+        <a href="SwissPaymentSlipFpdf_Red_Slip.php">
+            02 - Create a red payment slip with SwissPaymentSlipFpdf
+        </a>
     </li>
     <li>
-        <a href="SwissPaymentSlipFpdf_Thousand_Slips.php">03 - Create one thousand orange payment slips with
-            SwissPaymentSlipFpdf</a>
+        <a href="SwissPaymentSlipFpdf_Thousand_Slips.php">
+            03 - Create one thousand orange payment slips with SwissPaymentSlipFpdf
+        </a>
     </li>
 </ul>
 </body>

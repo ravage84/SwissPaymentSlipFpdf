@@ -26,8 +26,8 @@ $time_start = microtime(true);
 require __DIR__ . '/../vendor/autoload.php';
 
 // Import necessary classes
-use SwissPaymentSlip\SwissPaymentSlip\RedPaymentSlip;
 use SwissPaymentSlip\SwissPaymentSlip\RedPaymentSlipData;
+use SwissPaymentSlip\SwissPaymentSlip\RedPaymentSlip;
 use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
@@ -61,7 +61,6 @@ $paymentSlipData->setAmount(8479.25);
 $paymentSlipData->setPaymentReasonData('Rechnung', 'Nr.7496');
 
 // Create a payment slip object, pass in the prepared data container
-// for better performance, take it outside of the loop
 $paymentSlip = new RedPaymentSlip($paymentSlipData, 0, 191);
 
 // Create an instance of the FPDF implementation
