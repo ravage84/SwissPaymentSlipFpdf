@@ -19,3 +19,4 @@ Thumbs.db
 phpunit.xml
 vendor
 report
+examples/*.pdf

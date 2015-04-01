@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Updated class calls to accommodate the latest release 0.13.1 of SwissPaymentSlipPdf
-
+- Added created example pdf files to .gitignore
+- Updated CHANGELOG
 ### Fixed
 - Changed convertColor2Rgb function to protected instead of private

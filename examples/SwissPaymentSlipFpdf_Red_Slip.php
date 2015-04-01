@@ -13,8 +13,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>SwissPaymentSlipFpdf Example 02: Create a red payment slip</title>
+    <meta charset="utf-8">
+    <title>SwissPaymentSlipFpdf Example 02: Create a red payment slip</title>
 </head>
 <body>
 <h1>SwissPaymentSlipFpdf Example 02: Create a red payment slip</h1>
@@ -23,7 +23,7 @@
 $time_start = microtime(true);
 
 // Make sure the classes get auto-loaded
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 // Import necessary classes
 use SwissPaymentSlip\SwissPaymentSlip\RedPaymentSlip;
@@ -32,10 +32,10 @@ use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
-define('FPDF_FONTPATH', __DIR__.'/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
+define('FPDF_FONTPATH', __DIR__ . '/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
 
 // Create an instance of FPDF, setup default settings
-$fPdf = new FPDF('P','mm','A4');
+$fPdf = new FPDF('P', 'mm', 'A4');
 
 // Add OCRB font to FPDF
 $fPdf->AddFont('OCRB10');
@@ -45,7 +45,7 @@ $fPdf->AddPage();
 $fPdf->SetAutoPageBreak(false);
 
 // Insert a dummy invoice text, not part of the payment slip itself
-$fPdf->SetFont('Helvetica','',9);
+$fPdf->SetFont('Helvetica', '', 9);
 $fPdf->Cell(50, 4, "Just some dummy text.");
 
 // Create a payment slip data container (value object)
@@ -61,6 +61,7 @@ $paymentSlipData->setAmount(8479.25);
 $paymentSlipData->setPaymentReasonData('Rechnung', 'Nr.7496');
 
 // Create a payment slip object, pass in the prepared data container
+// for better performance, take it outside of the loop
 $paymentSlip = new RedPaymentSlip($paymentSlipData, 0, 191);
 
 // Create an instance of the FPDF implementation
@@ -70,9 +71,11 @@ $paymentSlipFpdf = new PaymentSlipFpdf($fPdf, $paymentSlip);
 $paymentSlipFpdf->createPaymentSlip($paymentSlip);
 
 // Output PDF named example_fpdf_red_slip.pdf to examples folder
-$fPdf->Output(__DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_red_slip.pdf', 'F');
+$pdfName = 'example_fpdf_red_slip.pdf';
+$pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
+$fPdf->Output($pdfPath, 'F');
 
-echo "Payment slip created in " . __DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_red_slip.pdf <br>';
+echo sprintf('Payment slip created in <a href="%s">%s</a><br>', $pdfName, $pdfPath);
 
 echo "<br>";
 

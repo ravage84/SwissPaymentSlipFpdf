@@ -13,8 +13,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>SwissPaymentSlipFpdf Example 03: Create one thousand orange payment slips</title>
+    <meta charset="utf-8">
+    <title>SwissPaymentSlipFpdf Example 03: Create one thousand orange payment slips</title>
 </head>
 <body>
 <h1>SwissPaymentSlipFpdf Example 03: Create one thousand orange payment slips</h1>
@@ -23,7 +23,7 @@
 $time_start = microtime(true);
 
 // Make sure the classes get auto-loaded
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 // Import necessary classes
 use SwissPaymentSlip\SwissPaymentSlip\OrangePaymentSlip;
@@ -32,50 +32,52 @@ use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
-define('FPDF_FONTPATH', __DIR__.'/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
+define('FPDF_FONTPATH', __DIR__ . '/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
 
 // Create an instance of FPDF, setup default settings
-$fPdf = new FPDF('P','mm','A4');
+$fPdf = new FPDF('P', 'mm', 'A4');
 
 // Add OCRB font to FPDF
 $fPdf->AddFont('OCRB10');
 
 // create 1000 payment slips
 for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
-	// Add page, don't break page automatically
-	$fPdf->AddPage();
-	$fPdf->SetAutoPageBreak(false);
+    // Add page, don't break page automatically
+    $fPdf->AddPage();
+    $fPdf->SetAutoPageBreak(false);
 
-	// Insert a dummy invoice text, not part of the payment slip itself
-	$fPdf->SetFont('Helvetica','',9);
-	$fPdf->Cell(50, 4, "Just some dummy text.");
+    // Insert a dummy invoice text, not part of the payment slip itself
+    $fPdf->SetFont('Helvetica', '', 9);
+    $fPdf->Cell(50, 4, "Just some dummy text.");
 
-	// Create a payment slip data container (value object)
-	$paymentSlipData = new OrangePaymentSlipData(); // for better performance, take outside of the loop
+    // Create a payment slip data container (value object)
+    $paymentSlipData = new OrangePaymentSlipData(); // for better performance, take outside of the loop
 
-	// Fill the data container with your data
-	$paymentSlipData->setBankData('Seldwyla Bank', '8001 Zürich');
-	$paymentSlipData->setAccountNumber('01-145-6');
-	$paymentSlipData->setRecipientData('H. Muster AG', 'Versandhaus', 'Industriestrasse 88', '8000 Zürich');
-	$paymentSlipData->setPayerData('Rutschmann Pia', 'Marktgasse 28', '9400 Rorschach', 'Slip # ' . $slipNr);
-	$paymentSlipData->setAmount(2830.50);
-	$paymentSlipData->setReferenceNumber('7520033455900012');
-	$paymentSlipData->setBankingCustomerId('215703');
+    // Fill the data container with your data
+    $paymentSlipData->setBankData('Seldwyla Bank', '8001 Zuerich');
+    $paymentSlipData->setAccountNumber('01-145-6');
+    $paymentSlipData->setRecipientData('H. Muster AG', 'Versandhaus', 'Industriestrasse 88', '8000 Zuerich');
+    $paymentSlipData->setPayerData('Rutschmann Pia', 'Marktgasse 28', '9400 Rorschach', 'Slip # ' . $slipNr);
+    $paymentSlipData->setAmount(2830.50);
+    $paymentSlipData->setReferenceNumber('7520033455900012');
+    $paymentSlipData->setBankingCustomerId('215703');
 
-	// Create a payment slip object, pass in the prepared data container
-	$paymentSlip = new OrangePaymentSlip($paymentSlipData, 0, 191); // for better performance, take outside of the loop
+    // Create a payment slip object, pass in the prepared data container
+    $paymentSlip = new OrangePaymentSlip($paymentSlipData, 0, 191); // for better performance, take outside of the loop
 
-	// Create an instance of the FPDF implementation
-	$paymentSlipFpdf = new PaymentSlipFpdf($fPdf, $paymentSlip); // for better performance, take outside of the loop
+    // Create an instance of the FPDF implementation
+    $paymentSlipFpdf = new PaymentSlipFpdf($fPdf, $paymentSlip); // for better performance, take outside of the loop
 
-	// "Print" the slip with its elements according to their attributes
-	$paymentSlipFpdf->createPaymentSlip($paymentSlip);
+    // "Print" the slip with its elements according to their attributes
+    $paymentSlipFpdf->createPaymentSlip($paymentSlip);
 }
 
 // Output PDF named example_fpdf_thousand_slips.pdf to examples folder
-$fPdf->Output(__DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_thousand_slips.pdf', 'F');
+$pdfName = 'example_fpdf_thousand_slips.pdf';
+$pdfPath = __DIR__ . DIRECTORY_SEPARATOR . $pdfName;
+$fPdf->Output($pdfPath, 'F');
 
-echo "Payment slip created in " . __DIR__ . DIRECTORY_SEPARATOR . 'example_fpdf_thousand_slips.pdf <br>';
+echo sprintf('Payment slips created in <a href="%s">%s</a><br>', $pdfName, $pdfPath);
 
 echo "<br>";
 
