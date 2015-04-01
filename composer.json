@@ -47,8 +47,13 @@
         "source": "https://github.com/ravage84/SwissPaymentSlipFpdf"
     },
     "autoload": {
-        "psr-0": {
-            "SwissPaymentSlip\\SwissPaymentSlipFpdf": "src"
+        "psr-4": {
+            "SwissPaymentSlip\\SwissPaymentSlipFpdf\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SwissPaymentSlip\\SwissPaymentSlipFpdf\\Tests\\": "tests"
         }
     }
 }

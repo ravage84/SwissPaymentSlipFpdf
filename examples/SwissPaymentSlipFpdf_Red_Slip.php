@@ -32,7 +32,7 @@ use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
-define('FPDF_FONTPATH', __DIR__ . '/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
+define('FPDF_FONTPATH', __DIR__ . '/../src/Resources/font');
 
 // Create an instance of FPDF, setup default settings
 $fPdf = new FPDF('P', 'mm', 'A4');
@@ -52,9 +52,9 @@ $fPdf->Cell(50, 4, "Just some dummy text.");
 $paymentSlipData = new RedPaymentSlipData();
 
 // Fill the data container with your data
-$paymentSlipData->setBankData('Seldwyla Bank', '8021 Zuerich');
+$paymentSlipData->setBankData('Seldwyla Bank', '8021 Zürich');
 $paymentSlipData->setAccountNumber('80-939-3');
-$paymentSlipData->setRecipientData('Muster AG', 'Bahnhofstrasse 5', '8001 Zuerich');
+$paymentSlipData->setRecipientData('Muster AG', 'Bahnhofstrasse 5', '8001 Zürich');
 $paymentSlipData->setIban('CH3808888123456789012');
 $paymentSlipData->setPayerData('M. Beispieler', 'Bahnhofstrasse 356', '', '7000 Chur');
 $paymentSlipData->setAmount(8479.25);

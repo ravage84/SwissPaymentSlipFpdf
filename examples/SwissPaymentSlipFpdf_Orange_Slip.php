@@ -32,7 +32,7 @@ use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
-define('FPDF_FONTPATH', __DIR__ . '/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
+define('FPDF_FONTPATH', __DIR__ . '/../src/Resources/font');
 
 // Create an instance of FPDF, setup default settings
 $fPdf = new FPDF('P', 'mm', 'A4');

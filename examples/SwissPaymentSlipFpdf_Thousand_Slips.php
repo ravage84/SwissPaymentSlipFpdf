@@ -32,7 +32,7 @@ use SwissPaymentSlip\SwissPaymentSlipFpdf\PaymentSlipFpdf;
 use fpdf\FPDF;
 
 // Make sure FPDF has access to the additional fonts
-define('FPDF_FONTPATH', __DIR__ . '/../src/SwissPaymentSlip/SwissPaymentSlipFpdf/Resources/font');
+define('FPDF_FONTPATH', __DIR__ . '/../src/Resources/font');
 
 // Create an instance of FPDF, setup default settings
 $fPdf = new FPDF('P', 'mm', 'A4');
@@ -54,9 +54,9 @@ for ($slipNr = 1; $slipNr <= 1000; $slipNr++) {
     $paymentSlipData = new OrangePaymentSlipData();
 
     // Fill the data container with your data
-    $paymentSlipData->setBankData('Seldwyla Bank', '8001 Zuerich');
+    $paymentSlipData->setBankData('Seldwyla Bank', '8001 Zürich');
     $paymentSlipData->setAccountNumber('01-145-6');
-    $paymentSlipData->setRecipientData('H. Muster AG', 'Versandhaus', 'Industriestrasse 88', '8000 Zuerich');
+    $paymentSlipData->setRecipientData('H. Muster AG', 'Versandhaus', 'Industriestrasse 88', '8000 Zürich');
     $paymentSlipData->setPayerData('Rutschmann Pia', 'Marktgasse 28', '9400 Rorschach', 'Slip # ' . $slipNr);
     $paymentSlipData->setAmount(2830.50);
     $paymentSlipData->setReferenceNumber('7520033455900012');
