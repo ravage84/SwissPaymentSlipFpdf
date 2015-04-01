@@ -2,7 +2,7 @@
 All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/steampilot/SwissPaymentSlipFpdf.git)
+## [Unreleased](https://github.com/ravage84/SwissPaymentSlipFpdf/compare/0.6.0...master)
 ### Added
 
 ### Changed
@@ -23,7 +23,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - A bunch of incomplete tests
 
 ### Changed
-- Updated the swiss-payment-slip/swiss-payment-slip-pdf dependency to version 0.13.1 (API breaking)
+- Updated the swiss-payment-slip/swiss-payment-slip-pdf dependency to version 0.13.* (API breaking)
 - Adjusted the calls to the updated SwissPaymentSlipPdf class
 - Added the PDFs generated through the examples to the ignore list
 - Changed convertColor2Rgb method to protected instead of private

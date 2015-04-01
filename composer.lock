@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e517ca88b5b4a6bfa3a6a63309701b6f",
+    "hash": "0b94b5a6096f2297fed48eaef6b7eb86",
     "packages": [
         {
             "name": "itbz/fpdf",
