@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "258f9fe977438e2778311e2f3854c4de",
+    "hash": "1c188283fc36d2f097b1d63e8c75146f",
     "packages": [
         {
             "name": "itbz/fpdf",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanneskod/fpdf.git",
-                "reference": "141f491e4feacc6879c74413b7f5c6a83ffe31ca"
+                "reference": "06d02a7bf227a62d37691a4e7e9c3a35efcb41c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanneskod/fpdf/zipball/141f491e4feacc6879c74413b7f5c6a83ffe31ca",
-                "reference": "141f491e4feacc6879c74413b7f5c6a83ffe31ca",
+                "url": "https://api.github.com/repos/hanneskod/fpdf/zipball/06d02a7bf227a62d37691a4e7e9c3a35efcb41c3",
+                "reference": "06d02a7bf227a62d37691a4e7e9c3a35efcb41c3",
                 "shasum": ""
             },
             "require": {
@@ -30,9 +30,12 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "no usage restriction"
+            ],
             "description": "Unofficial PSR-0 compliant version of the FPDF library",
             "homepage": "http://www.fpdf.org/",
-            "time": "2012-05-18 00:06:51"
+            "time": "2013-12-27 14:18:15"
         },
         {
             "name": "swiss-payment-slip/swiss-payment-slip",
