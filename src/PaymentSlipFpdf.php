@@ -18,11 +18,20 @@ use fpdf\FPDF;
 /**
  * Create Swiss payment slips (ESR/ES) as PDFs with FPDF
  *
- * Responsible for generating standard Swiss payment Slips using FPDF as engine.
- * Layouting done by utilizing SwissPaymentSlip
- * Data organisation through SwissPaymentSlipData
+ * Responsible for generating standard Swiss payment Slips as PDFs using FPDF as engine.
+ * Layout done by utilizing PaymentSlip and
+ * data organisation through PaymentSlipData.
+ *
+ * @link https://github.com/ravage84/SwissPaymentSlipPdf/ SwissPaymentSlipPdf
+ * @link https://github.com/ravage84/SwissPaymentSlip/ SwissPaymentSlip
  */
-class PaymentSlipFpdf extends PaymentSlipPdf {
+class PaymentSlipFpdf extends PaymentSlipPdf
+{
+    /**
+     * A caching table for hex to RGB conversions
+     *
+     * @var array
+     */
     protected $rgbColors = array();
 
     /**
@@ -56,21 +65,27 @@ class PaymentSlipFpdf extends PaymentSlipPdf {
     /**
      * {@inheritDoc}
      */
-    protected function displayImage($background) {
+    protected function displayImage($background)
+    {
         // TODO check if slipBackground is a color or a path to a file
 
-        $this->pdfEngine->Image($background,
+        $this->pdfEngine->Image(
+            $background,
             $this->paymentSlip->getSlipPosX(),
             $this->paymentSlip->getSlipPosY(),
             $this->paymentSlip->getSlipWidth(),
             $this->paymentSlip->getSlipHeight(),
-            strtoupper(substr($background, -3, 3)));
+            strtoupper(substr($background, -3, 3))
+        );
+
+        return $this;
     }
 
     /**
      * {@inheritDoc}
      */
-    protected function setFont($fontFamily, $fontSize, $fontColor) {
+    protected function setFont($fontFamily, $fontSize, $fontColor)
+    {
         if ($fontColor) {
             if ($this->lastFontColor != $fontColor) {
                 $this->lastFontColor = $fontColor;
@@ -85,36 +100,48 @@ class PaymentSlipFpdf extends PaymentSlipPdf {
 
             $this->pdfEngine->SetFont($fontFamily, '', $fontSize);
         }
+
+        return $this;
     }
 
     /**
      * {@inheritDoc}
      */
-    protected function setBackground($background) {
+    protected function setBackground($background)
+    {
         // TODO check if it's a path to a file
         // TODO else it should be a color
         $rgbArray = $this->convertColor2Rgb($background);
         $this->pdfEngine->SetFillColor($rgbArray['red'], $rgbArray['green'], $rgbArray['blue']);
+
+        return $this;
     }
 
     /**
      * {@inheritDoc}
      */
-    protected function setPosition($posX, $posY) {
+    protected function setPosition($posX, $posY)
+    {
         $this->pdfEngine->SetXY($posX, $posY);
+
+        return $this;
     }
 
     /**
      * {@inheritDoc}
      */
-    protected function createCell($width, $height, $line, $textAlign, $fill) {
-        $this->pdfEngine->Cell($width, $height, utf8_decode($line), 0, 0, $textAlign, $fill);
+    protected function createCell($width, $height, $line, $textAlign, $fill)
+    {
+        $this->pdfEngine->Cell($width, $height, $line, 0, 0, $textAlign, $fill);
+
+        return $this;
     }
 
     /**
      * {@inheritDoc}
      */
-    protected function convertColor2Rgb($color) {
+    protected function convertColor2Rgb($color)
+    {
         if (isset($this->rgbColors[$color])) {
             return $this->rgbColors[$color];
         }
@@ -135,21 +162,26 @@ class PaymentSlipFpdf extends PaymentSlipPdf {
      * @link http://www.php.net/manual/en/function.hexdec.php#99478
      * @todo Throw an exception if an invalid hex color code was given
      */
-    private function hex2RGB($hexStr, $returnAsString = false, $separator = ',') {
+    protected function hex2RGB($hexStr, $returnAsString = false, $separator = ',')
+    {
         $hexStr = preg_replace("/[^0-9A-Fa-f]/", '', $hexStr); // Gets a proper hex string
         $rgbArray = array();
-        if (strlen($hexStr) == 6) { //If a proper hex code, convert using bitwise operation. No overhead... faster
+        if (strlen($hexStr) == 6) {
+            // If a proper hex code, convert using bitwise operation. No overhead... faster
             $colorVal = hexdec($hexStr);
             $rgbArray['red'] = 0xFF & ($colorVal >> 0x10);
             $rgbArray['green'] = 0xFF & ($colorVal >> 0x8);
             $rgbArray['blue'] = 0xFF & $colorVal;
-        } elseif (strlen($hexStr) == 3) { //if shorthand notation, need some string manipulations
+        } elseif (strlen($hexStr) == 3) {
+            // If shorthand notation, need some string manipulations
             $rgbArray['red'] = hexdec(str_repeat(substr($hexStr, 0, 1), 2));
             $rgbArray['green'] = hexdec(str_repeat(substr($hexStr, 1, 1), 2));
             $rgbArray['blue'] = hexdec(str_repeat(substr($hexStr, 2, 1), 2));
         } else {
             return false; //Invalid hex color code
         }
-        return $returnAsString ? implode($separator, $rgbArray) : $rgbArray; // returns the rgb string or the associative array
+
+        // Returns the RGB values either as string or as associative array
+        return $returnAsString ? implode($separator, $rgbArray) : $rgbArray;
     }
 }
