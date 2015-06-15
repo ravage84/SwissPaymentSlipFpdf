@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-## [0.6.0](https://github.com/ravage84/SwissPaymentSlipFpdf/releases/tag/0.6.0) - 2013-04-01
+## [0.6.0](https://github.com/ravage84/SwissPaymentSlipFpdf/releases/tag/0.6.0) - 2015-04-01
 ### Added
 - Scrutinizer CI integration & badges
 - .editorconfig file
