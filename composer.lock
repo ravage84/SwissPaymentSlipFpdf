@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b94b5a6096f2297fed48eaef6b7eb86",
+    "content-hash": "043697bc8f04c7944b5b0ccb7bae2151",
     "packages": [
         {
             "name": "itbz/fpdf",
@@ -35,7 +35,7 @@
             ],
             "description": "Unofficial PSR-0 compliant version of the FPDF library",
             "homepage": "http://www.fpdf.org/",
-            "time": "2013-12-27 14:18:15"
+            "time": "2013-12-27T14:18:15+00:00"
         },
         {
             "name": "swiss-payment-slip/swiss-payment-slip",
@@ -96,7 +96,7 @@
                 "Payment slip",
                 "es"
             ],
-            "time": "2015-02-18 19:51:56"
+            "time": "2015-02-18T19:51:56+00:00"
         },
         {
             "name": "swiss-payment-slip/swiss-payment-slip-pdf",
@@ -159,7 +159,7 @@
                 "es",
                 "pdf"
             ],
-            "time": "2015-02-18 20:04:44"
+            "time": "2015-02-18T20:04:44+00:00"
         }
     ],
     "packages-dev": [
@@ -222,7 +222,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-09-02 10:13:14"
+            "time": "2014-09-02T10:13:14+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -267,7 +267,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2013-10-10 15:34:57"
+            "time": "2013-10-10T15:34:57+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -311,7 +311,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2014-01-30 17:20:04"
+            "time": "2014-01-30T17:20:04+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -355,7 +355,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2013-08-02 07:42:54"
+            "time": "2013-08-02T07:42:54+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -405,7 +405,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2014-03-03 05:10:30"
+            "time": "2014-03-03T05:10:30+00:00"
         },
         {
             "name": "phpunit/phpunit",
@@ -478,7 +478,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-10-17 09:04:17"
+            "time": "2014-10-17T09:04:17+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -527,7 +527,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2013-01-13 10:24:48"
+            "time": "2013-01-13T10:24:48+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -600,7 +600,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2014-12-18 02:37:51"
+            "time": "2014-12-18T02:37:51+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -650,7 +650,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2015-03-12 10:28:44"
+            "time": "2015-03-12T10:28:44+00:00"
         }
     ],
     "aliases": [],
@@ -659,7 +659,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.0"
+        "php": ">=5.4.0"
     },
     "platform-dev": []
 }
