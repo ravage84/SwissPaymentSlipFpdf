@@ -27,11 +27,6 @@
         </a>
     </li>
     <li>
-        <a href="SwissPaymentSlipFpdf_Red_Slip.php">
-            02 - Create a red payment slip with SwissPaymentSlipFpdf
-        </a>
-    </li>
-    <li>
         <a href="SwissPaymentSlipFpdf_Thousand_Slips.php">
             03 - Create one thousand orange payment slips with SwissPaymentSlipFpdf
         </a>
