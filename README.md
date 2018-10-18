@@ -17,7 +17,7 @@ checkout [SwissPaymentSlipTcpdf](https://github.com/ravage84/SwissPaymentSlipTcp
 How to use
 ----------
 
-Just install the the package (see [Installation](https://github.com/ravage84/SwissPaymentSlipFcpdf#installation))
+Just install the package (see [Installation](https://github.com/ravage84/SwissPaymentSlipFcpdf#installation))
 and check out the contained examples in the
 [examples folder](https://github.com/ravage84/SwissPaymentSlipFcpdf/tree/master/examples).
 
