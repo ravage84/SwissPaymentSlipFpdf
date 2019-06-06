@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 ### Changed
+- removed support information for red payment slip (ES) #12
 
 ### Fixed
 

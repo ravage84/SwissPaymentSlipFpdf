@@ -1,6 +1,6 @@
 {
     "name": "swiss-payment-slip/swiss-payment-slip-fpdf",
-    "description": "Create Swiss payment slips with reference number (ESR) or without (ES) as PDFs with FPDF",
+    "description": "Create Swiss payment slips with reference number (ESR) as PDFs with FPDF",
     "license": "MIT",
     "homepage": "https://github.com/ravage84/SwissPaymentSlipFpdf",
     "keywords": [
@@ -8,7 +8,6 @@
         "Inpayment slip",
         "Einzahlungsschein",
         "ESR",
-        "ES",
         "PDF",
         "FPDF"
     ],
@@ -55,5 +54,10 @@
         "psr-4": {
             "SwissPaymentSlip\\SwissPaymentSlipFpdf\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-codestyle": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests examples",
+        "fix-codestyle": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests examples"
     }
 }
