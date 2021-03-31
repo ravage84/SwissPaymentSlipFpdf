@@ -13,7 +13,7 @@
         "FPDF"
     ],
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=5.6.0",
         "fpdf/fpdf": "1.8.*",
         "swiss-payment-slip/swiss-payment-slip-pdf": "0.13.*"
     },
