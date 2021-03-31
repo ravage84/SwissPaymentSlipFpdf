@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "setasign/fpdf": "1.7.*",
+        "fpdf/fpdf": "1.8.*",
         "swiss-payment-slip/swiss-payment-slip-pdf": "0.13.*"
     },
     "require-dev": {
