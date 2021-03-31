@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9394bc9b762b6dbd126ab8c6da757ca7",
+    "content-hash": "82a8ffeb7c8cef15272d3aa71c44d8e1",
     "packages": [
         {
             "name": "fpdf/fpdf",
-            "version": "1.8.1",
+            "version": "1.82.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coreydoughty/Fpdf.git",
-                "reference": "2ce0beb0002f074d2ef3020b049c50fff0be1f9a"
+                "reference": "a8eb66ba732813f282a935775bceb72ffd40b15d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coreydoughty/Fpdf/zipball/2ce0beb0002f074d2ef3020b049c50fff0be1f9a",
-                "reference": "2ce0beb0002f074d2ef3020b049c50fff0be1f9a",
+                "url": "https://api.github.com/repos/coreydoughty/Fpdf/zipball/a8eb66ba732813f282a935775bceb72ffd40b15d",
+                "reference": "a8eb66ba732813f282a935775bceb72ffd40b15d",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             ],
             "support": {
                 "issues": "https://github.com/coreydoughty/Fpdf/issues",
-                "source": "https://github.com/coreydoughty/Fpdf/tree/master"
+                "source": "https://github.com/coreydoughty/Fpdf/tree/1.82.1"
             },
-            "time": "2018-02-13T19:50:06+00:00"
+            "time": "2020-02-15T12:05:43+00:00"
         },
         {
             "name": "swiss-payment-slip/swiss-payment-slip",
