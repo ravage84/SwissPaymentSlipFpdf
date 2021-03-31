@@ -13,7 +13,7 @@
 namespace SwissPaymentSlip\SwissPaymentSlipFpdf;
 
 use SwissPaymentSlip\SwissPaymentSlipPdf\PaymentSlipPdf;
-use fpdf\FPDF;
+use FPDF;
 
 /**
  * Create Swiss payment slips (ESR/ES) as PDFs with FPDF
