@@ -13,7 +13,7 @@
 namespace SwissPaymentSlip\SwissPaymentSlipFpdf;
 
 use SwissPaymentSlip\SwissPaymentSlipPdf\PaymentSlipPdf;
-use fpdf\FPDF;
+use Fpdf\Fpdf;
 
 /**
  * Create Swiss payment slips (ESR/ES) as PDFs with FPDF
@@ -37,7 +37,7 @@ class PaymentSlipFpdf extends PaymentSlipPdf
     /**
      * The PDF engine object to generate the PDF output with
      *
-     * @var null|FPDF The PDF engine object
+     * @var null|Fpdf The PDF engine object
      */
     protected $pdfEngine = null;
 
